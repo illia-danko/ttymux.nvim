@@ -24,7 +24,7 @@ binding issues. They do the job, however:
 - They provides *not native* vim/neovim keymaps;
 - They are features limited.
 
-[nvimtmux](https://github.com/elijahdanko/nvimtmux) gives a native
+[tmuxnvim](https://github.com/elijahdanko/tmuxnvim) gives a native
 Tmux/Neovim workfolow with many implemented fatures.
 
 # Limitations
