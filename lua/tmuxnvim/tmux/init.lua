@@ -11,6 +11,5 @@ local function goto_pane(vim_direction)
 end
 
 return {
-  is_last_pane = is_last_pane,
   goto_pane = goto_pane,
 }
