@@ -1,12 +1,13 @@
-local collection = require('neotmux.utils.collection')
+local collection = require('nvimtmux.utils.collection')
 local config = {}
 
-local navigate_prefix = "<C-w>"
+local function t(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
 
 local function navigate(direction)
   return function()
-    local cmd = "normal! \<C-w>" .. direction
-    vim.cmd(":exec " .. cmd)
+    vim.cmd(t("normal! <C-w>" .. direction))
   end
 end
 
@@ -17,10 +18,10 @@ local function setup(user_config)
     return
   end
 
-  vim.api.nvim_set_keymap("n", "<C-w>l", navigate("l"))
-  vim.api.nvim_set_keymap("n", "<C-w>h", navigate("h"))
-  vim.api.nvim_set_keymap("n", "<C-w>k", navigate("k"))
-  vim.api.nvim_set_keymap("n", "<C-w>j", navigate("j"))
+  vim.keymap.set("n", "<C-w>l", navigate("l"))
+  vim.keymap.set("n", "<C-w>h", navigate("h"))
+  vim.keymap.set("n", "<C-w>k", navigate("k"))
+  vim.keymap.set("n", "<C-w>j", navigate("j"))
 end
 
 return {
