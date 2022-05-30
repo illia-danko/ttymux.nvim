@@ -14,6 +14,7 @@ local function setup(user_config)
   vim.api.nvim_set_keymap("n", "<C-w>h", [[<Cmd>lua require'tmuxnvim.window'.navigate("h")<CR>]], opts)
   vim.api.nvim_set_keymap("n", "<C-w>k", [[<Cmd>lua require'tmuxnvim.window'.navigate("k")<CR>]], opts)
   vim.api.nvim_set_keymap("n", "<C-w>j", [[<Cmd>lua require'tmuxnvim.window'.navigate("j")<CR>]], opts)
+  vim.api.nvim_set_keymap("n", "<C-w>c", [[<Cmd>lua require'tmuxnvim.window'.close_current()<CR>]], opts)
 end
 
 return {
