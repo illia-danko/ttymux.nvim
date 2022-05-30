@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
     | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
 is_other_panes="echo '#{window_panes}' | grep -vqwE '1'"
@@ -13,4 +11,3 @@ bind -T vim-keys o { kill-pane -a; if "$is_vim" "send C-w; send"  }
 bind -T vim-keys c if "$is_vim" "send C-w; send" 'if $is_other_panes kill-pane'
 bind -T root C-w switch-client -T vim-keys
 bind -T copy-mode-vi C-w switch-client -T vim-keys
-
