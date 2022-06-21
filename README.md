@@ -26,14 +26,6 @@ binding issues. They do the job, however:
 [tmuxnvim](https://github.com/elijahdanko/tmuxnvim) gives a native
 Tmux/Neovim workflow with core implemented features.
 
-# Limitations
-
-Neovim/vim has two equal methods of windows navigation: with a doubled Ctrl key
-pressed and a single Ctrl prefix key, like `Ctrl-w Ctrl-w` and `Ctrl-w w`, both
-are used to go to the next window.
-
-The plugin supports only a single (prefix) Ctrl key method.
-
 # License
 
 MIT
