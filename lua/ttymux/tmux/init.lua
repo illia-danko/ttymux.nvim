@@ -7,20 +7,20 @@ local directions_table = {
 
 local function goto_pane(vim_direction)
   local d = directions_table[vim_direction]
-  vim.fn.system({"tmux", "select-pane", "-" .. d})
+  vim.fn.system({ "tmux", "select-pane", "-" .. d })
 end
 
 local function goto_next_pane()
-  vim.fn.system({"tmux", "select-pane", "-t", ":.+"})
+  vim.fn.system({ "tmux", "select-pane", "-t", ":.+" })
 end
 
 local function last_pane()
-  local res = vim.fn.system({"tmux", "display-message", "-p", "#{window_panes}"})
+  local res = vim.fn.system({ "tmux", "display-message", "-p", "#{window_panes}" })
   return res == "1\n"
 end
 
 local function close_current_pane()
-  vim.fn.system({"tmux", "kill-pane"})
+  vim.fn.system({ "tmux", "kill-pane" })
 end
 
 return {

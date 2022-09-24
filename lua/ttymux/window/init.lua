@@ -1,4 +1,4 @@
-local tmux = require("tmuxnvim.tmux")
+local tmux = require("ttymux.tmux")
 
 local function exec_wincmd(cmd)
   pcall(vim.cmd, "wincmd " .. cmd)
