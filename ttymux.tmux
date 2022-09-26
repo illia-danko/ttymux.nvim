@@ -38,6 +38,8 @@ bind s "send C-w; send"
 bind t "send C-w; send"
 
 # Tmux bindings (optional).
+set-window-option -g mode-key vi
+bind P paste-buffer
 bind \# kill-window
 bind t choose-session
 bind % if "$is_not_zoomed_window" "split-window -h -c \"#{pane_current_path}\"" "select-pane -t :.+"
