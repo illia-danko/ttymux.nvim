@@ -71,7 +71,6 @@ is_editor="ps -o state= -o comm= -t '#{pane_tty}' \
     | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|nvim)(diff)?$'"
 
 # Bindings.
-bind -T copy-mode-vi C-w switch-client -T vim-keys
 bind h if "$is_editor" "send C-w; send" "select-pane -L"
 bind C-h if "$is_editor" "send C-w; send" "select-pane -L"
 bind j if "$is_editor" "send C-w; send" "select-pane -U"
