@@ -1,10 +1,12 @@
+local M = {}
+
 local tmux = require("ttymux.tmux")
 
 local function exec_wincmd(cmd)
   pcall(vim.cmd, "wincmd " .. cmd)
 end
 
-local function navigate(direction)
+M.navigate = function(direction)
   local nr = vim.fn.winnr()
   exec_wincmd(direction)
 
@@ -13,7 +15,7 @@ local function navigate(direction)
   end
 end
 
-local function close_current()
+M.close_current = function()
   local nr = vim.fn.winnr("$")
   exec_wincmd("c")
 
@@ -34,7 +36,7 @@ local function has_win(direction)
   return true
 end
 
-local function next_window()
+M.next_window = function()
   if has_win("j") or has_win("l") then
     exec_wincmd("w")
   elseif not tmux.last_pane() then
@@ -44,8 +46,4 @@ local function next_window()
   end
 end
 
-return {
-  navigate = navigate,
-  close_current = close_current,
-  next_window = next_window,
-}
+return M

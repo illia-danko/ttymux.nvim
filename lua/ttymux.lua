@@ -1,7 +1,10 @@
-local window = require("ttymux.window")
-local config = {}
+local M = {}
 
-local function setup(user_config)
+local window = require("ttymux.window")
+
+M.setup = function(user_config)
+  local config = {}
+
   config.default_mapping = user_config.default_mapping
   if config.default_mapping == nil then
     config.default_mapping = true
@@ -88,6 +91,4 @@ local function setup(user_config)
   end
 end
 
-return {
-  setup = setup,
-}
+return M
