@@ -24,11 +24,11 @@ navigation. They do the job, however:
 
 - They rebind useful keymaps (such as Ctrl-K, which kills a line in tcsh like
   terminals);
-- They provide *not native* neovim keymaps.
+- They provide *not native* neovim window access.
 - They do not work upon others focused (non neovim) TUI tools.
 
 [ttymux.nvim](https://github.com/elijahdanko/ttymux.nvim) gives a native smooth
-Tmux <-> Neovim workflow. No needs to memorize the tmux prefix key command group
+Tmux <-> Neovim workflow. No needs to memorize a tmux prefix key command group
 and neovim C-w command group to manipulate windows: in most cases they are
 identical.
 
