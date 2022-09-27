@@ -1,9 +1,8 @@
-## Change prefix-key (optional).
+# Change prefix-key (optional).
 unbind C-b
 set -g prefix C-x
 bind C-x send-prefix
 
-# Vim bindings.
 is_not_zoomed_window="echo '#{window_zoomed_flag}' | grep -qwE '0'"
 is_other_panes='echo "#{window_panes}" | grep -vqwE "1"'
 is_editor="ps -o state= -o comm= -t '#{pane_tty}' \
