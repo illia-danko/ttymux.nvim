@@ -67,7 +67,6 @@ bind C-c if "$is_editor" "send C-w; send" 'if $is_other_panes kill-pane'
 bind % "split-window -h"
 bind \" "split-window -v"
 bind n new-window
-bind x kill-pane
 
 # Regular neovim bindings.
 bind v "send C-w; send"
