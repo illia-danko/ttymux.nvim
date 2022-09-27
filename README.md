@@ -22,8 +22,7 @@ Neovim-TMUX native navigator.
 There are several plugin among the community to address Tmux - Neovim
 navigation. They do the job, however:
 
-- They rebind useful keymaps (such as Ctrl-K, which kills a line in tcsh like
-  terminals);
+- They rebind useful key sequences, such as, `C-h`, `C-l`, `C-j` and `C-k`.
 - They provide *not native* neovim window access.
 - They do not work upon others focused (non neovim) TUI tools.
 
