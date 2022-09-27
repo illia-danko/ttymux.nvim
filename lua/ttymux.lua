@@ -44,16 +44,16 @@ end
 M.setup = function(user_config)
   local config = {}
 
-  config.default_mapping = user_config.default_mapping
-  if config.default_mapping == nil then
-    config.default_mapping = true
+  config.default_keymap = user_config.default_keymap
+  if config.default_keymap == nil then
+    config.default_keymap = true
   end
 
   if not vim.env.TMUX then
     return
   end
 
-  if config.default_mapping then
+  if config.default_keymap then
     bind_default_keymap()
   end
 end

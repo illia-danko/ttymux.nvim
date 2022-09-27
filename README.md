@@ -32,6 +32,29 @@ Tmux <-> Neovim workflow. No needs to memorize a tmux prefix key command group
 and neovim C-w command group to manipulate windows: in most cases they are
 identical.
 
+# Installation
+
+With Packer.nvim:
+
+Add this in your init.lua or plugins.lua
+
+```lua
+use({
+  "elijahdanko/ttymux.nvim",
+  config = function()
+    require("ttymux").setup({})
+  end
+})
+```
+
+# Default configuration
+
+```lua
+require("ttymux").setup({
+    default_keymap = true,
+})
+```
+
 # Tmux config examples
 
 ## C-w as a prefix key
