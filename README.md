@@ -54,6 +54,39 @@ require("ttymux").setup({
 })
 ```
 
+# API
+
+```lua
+require("ttymux.window").navigate("l") -- navigate right
+require("ttymux.window").navigate("h") -- navigate left
+require("ttymux.window").navigate("k") -- navigate top
+require("ttymux.window").navigate("j") -- navigate bottom
+require("ttymux.window").close_current() -- close a window or pane
+require("ttymux.window").next_window() -- cycle over windows
+```
+
+## Example: use arrows keys for window navigations
+
+Neovim:
+
+```lua
+vim.keymap.set("n", "<Left>", function() require("ttymux.window").navigate("h") end)
+vim.keymap.set("n", "<Right>", function() require("ttymux.window").navigate("l") end)
+vim.keymap.set("n", "<Down>", function() require("ttymux.window").navigate("j") end)
+vim.keymap.set("n", "<Up>", function() require("ttymux.window").navigate("k") end)
+```
+
+Tmux:
+
+```bash
+is_editor="ps -o state= -o comm= -t '#{pane_tty}' \
+    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|nvim)(diff)?$'"
+bind -T root Left if "$is_editor" "send Left" "select-pane -L"
+bind -T root Right if "$is_editor" "send Right" "select-pane -R"
+bind -T root Down if "$is_editor" "send Down" "select-pane -D"
+bind -T root Up if "$is_editor" "send Up" "select-pane -U"
+```
+
 # Tmux config examples
 
 ## C-w as a prefix key
