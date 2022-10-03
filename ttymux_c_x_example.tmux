@@ -33,3 +33,4 @@ bind P paste-buffer
 bind \# kill-window
 bind % if "$is_not_zoomed_window" "split-window -h -c \"#{pane_current_path}\"" "select-pane -t :.+"
 bind \" if "$is_not_zoomed_window" "split-window -v -c \"#{pane_current_path}\"" "select-pane -t :.+"
+bind c new-window -c "#{pane_current_path}"
